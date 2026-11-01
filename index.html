@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Planner</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Planner</p>
+          <h1>Daily Planner</h1>
+        </div>
+        <div class="today-box">
+          <span id="todayDate"></span>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="panel form-panel">
+          <h2>Add a task</h2>
+
+          <form id="taskForm">
+            <div class="field">
+              <label for="taskTitle">Task</label>
+              <input
+                type="text"
+                id="taskTitle"
+                placeholder="e.g. Finish project report"
+                required
+              />
+            </div>
+
+            <div class="row">
+              <div class="field">
+                <label for="taskPriority">Priority</label>
+                <select id="taskPriority">
+                  <option value="high">High</option>
+                  <option value="medium" selected>Medium</option>
+                  <option value="low">Low</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="taskTime">Time</label>
+                <input type="time" id="taskTime" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="taskDate">Date</label>
+              <input type="date" id="taskDate" />
+            </div>
+
+            <button type="submit" class="primary-btn">Add Task</button>
+          </form>
+        </section>
+
+        <section class="panel summary-panel">
+          <h2>Overview</h2>
+
+          <div class="stats">
+            <div class="stat-card">
+              <span>Total</span>
+              <strong id="totalTasks">0</strong>
+            </div>
+            <div class="stat-card">
+              <span>Done</span>
+              <strong id="doneTasks">0</strong>
+            </div>
+            <div class="stat-card">
+              <span>Left</span>
+              <strong id="leftTasks">0</strong>
+            </div>
+          </div>
+
+          <div class="suggestion-box">
+            <h3>Suggestion</h3>
+            <p id="suggestionText">Start with your most important task.</p>
+          </div>
+        </section>
+      </main>
+
+      <section class="panel task-panel">
+        <div class="task-header">
+          <h2>Tasks</h2>
+
+          <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="today">Today</button>
+            <button class="filter-btn" data-filter="high">High Priority</button>
+            <button class="filter-btn" data-filter="pending">Pending</button>
+          </div>
+        </div>
+
+        <ul id="taskList" class="task-list"></ul>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
